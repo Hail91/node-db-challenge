@@ -19,7 +19,7 @@ exports.up = function(knex) {
         .inTable('projects')
         table.string('task_description').notNullable()
         table.string('notes')
-        table.boolean().notNullable().defaultTo('false')
+        table.boolean('completed').notNullable().defaultTo('false')
     })
     .createTable('project_resources', table => {
         table.integer('project_id')
